@@ -2,6 +2,11 @@ import React from 'react';
 import Form from '../../component/Form';
 import Card from '../../component/Card';
 import { createUser } from "../../service/user";
+import styled from 'styled-components';
+
+export const Wrapper = styled.div`
+`;
+
 
 const RegisterContainer = () => {
     const [userInfo, setUserInfo] = React.useState(null);
@@ -16,11 +21,11 @@ const RegisterContainer = () => {
         }
     }
     return (
-        <div className="RegisterContainer">
+        <Wrapper>
             <Form onSubmit={onSubmitHandler} />
             {userInfo && <Card {...userInfo} />}
             {error && <div> something went wrong </div>}
-        </div>
+        </Wrapper>
     )
 }
 

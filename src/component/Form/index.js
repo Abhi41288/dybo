@@ -82,24 +82,27 @@ class Form extends React.PureComponent {
         }
 
         this.setState({ errors });
+        return Object.keys(errors).length;
     }
 
     hasError = () => {
-        this.validateInput();
-        return Object.keys(this.state.errors).length;
+        return this.validateInput();
     }
+
     onClickHandler = (e) => {
         e.preventDefault();
         if (this.hasError()) {
             return;
+        } else {
+            this.props.onSubmit && this.props.onSubmit({
+                "first_name": this.state.firstName,
+                "last_name": this.state.lastName,
+                "email": this.state.email,
+                "phone": `+${this.state.phoneNumber}`,
+                "linkedInProfile": this.state.linkedInProfile,
+            });
         }
-        this.props.onSubmit && this.props.onSubmit({
-            "first_name": this.state.firstName,
-            "last_name": this.state.lastName,
-            "email": this.state.email,
-            "phone": `+${this.state.phoneNumber}`,
-            "linkedInProfile": this.state.linkedInProfile,
-        })
+
     }
 
     render() {
@@ -141,7 +144,7 @@ class Form extends React.PureComponent {
                     value={this.state.linkedInProfile}
                     errorMessage="Url is invalid filed"
                     hasError={this.state.errors[InputTypes.linkedInProfile]} />
-                <button onClick={this.onClickHandler}>Submit</button>
+                <button onClick={this.onClickHandler} >Submit</button>
             </FormWrapper>
         )
     }

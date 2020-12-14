@@ -1,12 +1,8 @@
 import React from 'react';
 import Registration from '../../component/registration';
+import { Wrapper } from "../../component/HOC/backgroundWrapper";
 
 const OceanRegistrationForm = () => {
-    return (
-        <div className="OceanRegistrationForm">
-            <Registration />
-        </div>
-    );
+    return <Registration />;
 }
-
-export default OceanRegistrationForm
+export default Wrapper(OceanRegistrationForm, 'ocean');

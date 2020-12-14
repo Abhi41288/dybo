@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Wrapper } from "../../component/HOC/backgroundWrapper";
 
-const Desert = () => {
+const Ocean = () => {
     return (
-        <div className="Desert">
-            <Link to="/desert/register">  Register </Link>
+        <div className="Ocean">
+            <Link to="/ocean/register">  Register </Link>
         </div>
     )
 };
 
-export default Desert
+export default Wrapper(Ocean, 'ocean');

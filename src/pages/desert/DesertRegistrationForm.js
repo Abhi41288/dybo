@@ -1,11 +1,9 @@
 import React from 'react';
 import Registration from '../../component/registration';
+import { Wrapper } from "../../component/HOC/backgroundWrapper";
+
 const DesertRegistrationForm = () => {
-    return (
-        <div className="DesertRegistrationForm">
-            <Registration />
-        </div>
-    )
+    return <Registration />;
 }
 
-export default DesertRegistrationForm
+export default Wrapper(DesertRegistrationForm, 'desert');

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Wrapper } from "../../component/HOC/backgroundWrapper";
 
 const Desert = () => {
     return (
@@ -9,4 +10,4 @@ const Desert = () => {
     )
 };
 
-export default Desert
+export default Wrapper(Desert, 'desert')

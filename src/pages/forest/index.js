@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Wrapper } from "../../component/HOC/backgroundWrapper";
 
-const Desert = () => {
+const Forest = () => {
     return (
         <div className="Desert">
-            <Link to="/desert/register">  Register </Link>
+            <Link to="/forest/register">  Register </Link>
         </div>
     )
 };
 
-export default Desert
+export default Wrapper(Forest, 'forest');
